@@ -4,7 +4,7 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
-    restart: always
+    restart: unless-stopped
     ports:
       - '3000:3000'
     volumes:
@@ -15,7 +15,7 @@ services:
   clickhouse:
     image: yandex/clickhouse-server
     container_name: clickhouse
-    restart: always
+    restart: unless-stopped
     ports:
       - '8123:8123'
       - '9000:9000'
